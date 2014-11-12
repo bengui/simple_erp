@@ -51,9 +51,6 @@ public class MainActivity extends Activity
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
 
-        MySQLiteHelper db = MySQLiteHelper.getInstance(MainActivity.this);
-        db.selectAllItems();
-
     }
 
     @Override

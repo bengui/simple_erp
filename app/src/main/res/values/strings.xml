@@ -12,7 +12,12 @@
     <string name="title_activity_items">ItemsActivity</string>
     <string name="hello_world">Hello world!</string>
 
+
+
     <!-- ITEMS -->
     <string name="new_item">New Item</string>
-
+    <string name="name">Name</string>
+    <string name="save">Save</string>
+    <string name="description">Description</string>
+    <string name="item_created_successfully">Item created successfully</string>
 </resources>

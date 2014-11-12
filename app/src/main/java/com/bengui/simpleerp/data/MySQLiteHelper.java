@@ -5,6 +5,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import com.bengui.simpleerp.models.Item;
+
+import java.util.ArrayList;
+
 /**
  * Created by bengui on 09/11/14.
  */
@@ -47,7 +51,11 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
     }
 
-    public void selectAllItems(){
-        getReadableDatabase().execSQL("SELECT * FROM " + ItemsTable.TABLE_NAME + ";");
+    public ArrayList<Item> selectAllItems(){
+        return ItemsTable.getAllItems(getReadableDatabase());
+    }
+
+    public void saveItem(Item item){
+        ItemsTable.saveItem(item, getWritableDatabase());
     }
 }
