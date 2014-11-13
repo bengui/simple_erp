@@ -20,4 +20,6 @@
     <string name="save">Save</string>
     <string name="description">Description</string>
     <string name="item_created_successfully">Item created successfully</string>
+    <string name="edit_item">Edit item</string>
+    <string name="delete_item">Delete item</string>
 </resources>

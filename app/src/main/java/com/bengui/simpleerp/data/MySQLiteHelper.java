@@ -58,4 +58,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public void saveItem(Item item){
         ItemsTable.saveItem(item, getWritableDatabase());
     }
+
+    public void deleteItem(int item_id){
+        ItemsTable.deleteItem(item_id, getWritableDatabase());
+    }
 }

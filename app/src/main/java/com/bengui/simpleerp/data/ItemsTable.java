@@ -20,7 +20,7 @@ public class ItemsTable{
 
     public static final String CREATE_TABLE =
             "CREATE TABLE " + TABLE_NAME + " ( "
-            + COLUMN_ID + "INTEGER PRIMARY KEY, "
+            + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + COLUMN_DESCRIPTION + " TEXT, "
             + COLUMN_NAME + " VARCHAR NOT NULL);";
 
@@ -38,12 +38,17 @@ public class ItemsTable{
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             item = new Item();
+            item.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
             item.setName(cursor.getString(cursor.getColumnIndex(COLUMN_NAME)));
             item.setDescription(cursor.getString(cursor.getColumnIndex(COLUMN_DESCRIPTION)));
             itemsList.add(item);
             cursor.moveToNext();
         }
         return itemsList;
+    }
+
+    public static void deleteItem(int item_id, SQLiteDatabase db){
+        db.delete(TABLE_NAME, COLUMN_ID + " = " +item_id, null);
     }
 
 }
